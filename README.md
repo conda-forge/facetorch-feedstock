@@ -13,7 +13,7 @@ Development: https://github.com/tomas-gajarsky/facetorch
 
 Documentation: https://tomas-gajarsky.github.io/facetorch/facetorch/index.html
 
-A Python library that can detect faces and analyze facial features  using neural networks written in PyTorch.
+A Python library that can detect faces and analyze facial features using neural networks written in PyTorch.
 
 
 Current build status
