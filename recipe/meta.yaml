@@ -1,5 +1,5 @@
 {% set name = "facetorch" %}
-{% set version = "0.1.0" %}
+{% set version = "0.1.1" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f147e9acf5e00ce98e5dffa13ce1d36dc798ed656a6c997f27a3da99fc151acc
+  sha256: e7ebec4dd8ddbdacc76ae69896b6dbd03833042a5c256a90a5023f74bb22d98d
 
 build:
   noarch: python
