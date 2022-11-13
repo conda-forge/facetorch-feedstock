@@ -1,5 +1,5 @@
 {% set name = "facetorch" %}
-{% set version = "0.1.2" %}
+{% set version = "0.1.3" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b5894c4244e87e3525276a10a237a097b86cd24a1c169f37c77a2f9643e114dc
+  sha256: 69dc562f7f05cb5911ab987371f68ece2762b058ca39b1b176bf6b97e8ae7f69
 
 build:
   noarch: python
@@ -24,7 +24,6 @@ requirements:
     - gdown >=3.11.0
     - googleapis-common-protos >=1.56.3
     - hydra-core >=1.0.0
-    - matplotlib-base >=3.3.0
     - numpy >=1.18.2
     - pip
     - python >=3.8
