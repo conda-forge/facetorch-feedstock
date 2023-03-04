@@ -1,11 +1,11 @@
-About facetorch
-===============
+About facetorch-feedstock
+=========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/facetorch-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/tomas-gajarsky/facetorch
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/facetorch-feedstock/blob/main/LICENSE.txt)
 
 Summary: Face analysis PyTorch framework.
 
