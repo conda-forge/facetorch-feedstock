@@ -7,17 +7,17 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: a2f34182205a31be68c758cee4b277fc6daf8174f1d32ec0785adca9d7c39226
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
   run:
     - codetiming >=1.2.0
@@ -26,7 +26,7 @@ requirements:
     - hydra-core >=1.0.0
     - numpy >=1.18.2
     - pip
-    - python >=3.8
+    - python >={{ python_min }}
     - python-json-logger >=2.0.0
     - pytorch >=1.9.0
     - torchvision >=0.10.0
@@ -36,6 +36,7 @@ test:
     - facetorch
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
