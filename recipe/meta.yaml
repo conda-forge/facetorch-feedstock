@@ -13,11 +13,11 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
   run:
     - codetiming >=1.2.0
@@ -26,7 +26,7 @@ requirements:
     - hydra-core >=1.0.0
     - numpy >=1.18.2
     - pip
-    - python >=3.8
+    - python >={{ python_min }}
     - python-json-logger >=2.0.0
     - pytorch >=1.9.0
     - torchvision >=0.10.0
@@ -36,6 +36,7 @@ test:
     - facetorch
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
 
