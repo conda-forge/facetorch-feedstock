@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 27f0136a19e454406d9e88d8b5c4b5a7efee8e4957ad655c852bfdbc9fa308c8
 
 build:
@@ -19,6 +19,8 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
+    - huggingface_hub
+    - "pytorch >=1.9,<2.4"
   run:
     - codetiming >=1.2.0
     - gdown >=3.11.0
@@ -28,7 +30,8 @@ requirements:
     - pip
     - python >={{ python_min }}
     - python-json-logger >=2.0.0
-    - pytorch >=1.9.0
+    - huggingface_hub
+    - "pytorch >=1.9,<2.4"
     - torchvision >=0.10.0
 
 test:
