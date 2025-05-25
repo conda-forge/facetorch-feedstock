@@ -19,8 +19,8 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - huggingface-hub
-    - "torch >=1.9,<2.4"
+    - huggingface_hub
+    - "pytorch >=1.9,<2.4"
   run:
     - codetiming >=1.2.0
     - gdown >=3.11.0
@@ -30,8 +30,8 @@ requirements:
     - pip
     - python >={{ python_min }}
     - python-json-logger >=2.0.0
-    - huggingface-hub
-    - "torch >=1.9,<2.4"
+    - huggingface_hub
+    - "pytorch >=1.9,<2.4"
     - torchvision >=0.10.0
 
 test:
