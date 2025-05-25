@@ -1,5 +1,5 @@
 {% set name = "facetorch" %}
-{% set version = "0.5.1" %}
+{% set version = "0.6.0" %}
 
 
 package:
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b0c6ec0032d493495be63ca87c44a6558efa39df4d371e2ac764938cd5402359
+  sha256: 27f0136a19e454406d9e88d8b5c4b5a7efee8e4957ad655c852bfdbc9fa308c8
 
 build:
   noarch: python
@@ -19,6 +19,8 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
+    - huggingface_hub
+    - "pytorch >=1.9,<2.4"
   run:
     - codetiming >=1.2.0
     - gdown >=3.11.0
@@ -28,7 +30,8 @@ requirements:
     - pip
     - python >={{ python_min }}
     - python-json-logger >=2.0.0
-    - pytorch >=1.9.0
+    - huggingface_hub
+    - "pytorch >=1.9,<2.4"
     - torchvision >=0.10.0
 
 test:
