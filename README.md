@@ -23,7 +23,7 @@ Current build status
 <table><tr>
     <td>All platforms:</td>
     <td>
-      <img src="https://img.shields.io/badge/noarch-disabled-lightgrey.svg" alt="noarch disabled">
+      <img src="https://img.shields.io/badge/noarch-python-lightgrey.svg" alt="noarch python">
     </td>
   </tr>
 </table>
