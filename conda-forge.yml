@@ -1,5 +1,5 @@
 github:
-  branch_name: main
+  branch_name: rc
   tooling_branch_name: main
 conda_forge_output_validation: true
 conda_build:

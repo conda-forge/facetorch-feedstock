@@ -1,5 +1,5 @@
 {% set name = "facetorch" %}
-{% set version = "0.6.2" %}
+{% set version = "1.0.0rc5" %}
 
 
 package:
@@ -8,32 +8,36 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 886662478e3d1afabf469427f7f96fd355950276133ee7e2fe8bb2c57682a069
+  sha256: baebb3dbb99429abbb9a72cea6ca5c5079c663d665b1c6d446e2234086e8e2f2
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
     - python {{ python_min }}
     - pip
-    - huggingface_hub
-    - "pytorch >=1.9,<2.4"
+    - setuptools ==84.0.0
+    - wheel ==0.46.3
   run:
+    - python >={{ python_min }},<3.13
+    - certifi >=2026.10.19
     - codetiming >=1.2.0
     - gdown >=3.11.0
     - googleapis-common-protos >=1.56.3
-    - hydra-core >=1.0.0
+    - hydra-core >=1.3.7,<1.4
     - numpy >=1.18.2
-    - pip
-    - python >={{ python_min }}
+    - pillow >=13.0.0
+    - omegaconf >=2.3.0,<2.4
     - python-json-logger >=2.0.0
-    - huggingface_hub
-    - "pytorch >=1.9,<2.4"
+    - huggingface_hub >=0.16.0
+    - pytorch >=2.6,<2.14
+    - requests >=2.20.0
+    - urllib3 >=2.8.0
     - timm >=0.6.0
-    - torchvision >=0.10.0
+    - torchvision >=0.21,<0.29
 
 test:
   imports:
@@ -41,8 +45,10 @@ test:
   requires:
     - pip
     - python {{ python_min }}
+    - pytorch-cpu
   commands:
     - pip check
+    - python -c "from importlib.metadata import version; assert version('facetorch') == '{{ version }}'"
 
 
 about:
@@ -50,7 +56,9 @@ about:
   summary: Face analysis PyTorch framework.
   license: Apache-2.0
   license_family: APACHE
-  license_file: LICENSE
+  license_file:
+    - LICENSE
+    - MODEL_NOTICE.md
   description: |
     A Python library that can detect faces and analyze facial features using neural networks written in PyTorch.
   doc_url: https://tomas-gajarsky.github.io/facetorch/facetorch/index.html
