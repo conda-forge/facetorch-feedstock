@@ -4,3 +4,9 @@ github:
 conda_forge_output_validation: true
 conda_build:
   pkg_format: '2'
+bot:
+  automerge: false
+  check_solvable: true
+  version_updates:
+    sources:
+      - pypi
